@@ -1,25 +1,32 @@
 import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import { Provider } from 'react-redux';
+import { GlobalStyle } from './style.js';
+import { HashRouter, Route } from 'react-router-dom';
+import { IconfontStyle } from './statics/iconfont/iconfont';
+import store from './store';
+import SignIn from './login/signin';
+import SignUp from './login/signup';
+import Home from './home';
+import PersonalPage from './personalpage';
+import Write from './write';
+import Read from './read';
+import Answer from './answer';
+import PutQuestion from './putquestion';
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+function App() {  
+  return ( 
+    <Provider store = {store}>
+    <GlobalStyle />
+    <IconfontStyle />
+    <HashRouter>
+    	<Route exact path='/' component={ SignIn } />
+        <Route exact path='/signup' component={ SignUp } />
+        <Route exact path='/home' component={ Home } />
+        <Route exact path='/personalpage' component={ PersonalPage } />
+        <Route exact path='/answer' component={ Answer } />
+        <Route exact path='/putquestion' component={ PutQuestion } />
+    </HashRouter>
+    </Provider>
   );
 }
 
