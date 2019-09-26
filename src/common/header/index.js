@@ -1,4 +1,4 @@
-import React, { useEffect, useCallback } from 'react';
+import React, { useCallback } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import { CSSTransition } from 'react-transition-group';
 import { Link } from 'react-router-dom';
@@ -29,7 +29,6 @@ import {
 
 function Header() {
 	const focused = useSelector((state) => state.getIn(['header', 'focused']));
-	const focusedAnswer = useSelector((state) => state.getIn(['header', 'focusedAnswer']));
 	const focusedSearch = useSelector((state) => state.getIn(['header', 'focusedSearch']));
 	const focusedInput = useSelector((state) => state.getIn(['header', 'focusedInput']));
 	const focusedMessage = useSelector((state) => state.getIn(['header', 'focusedMessage']));
@@ -121,13 +120,13 @@ function Header() {
 				<Logo />
 				<Link to='/home' className='link'>
 					<HomeButton
-						className={focused == 0 ? 'focused' : ''}
+						className={focused === 0 ? 'focused' : ''}
 						onClick={() => dispatch({ type: 'CLICK_HOME' })}
 					>首页</HomeButton>
 				</Link>
 				<Link to='/answer' className='link'>
 					<WaitAnswer
-						className={focused == 1 ? 'focused' : ''}
+						className={focused === 1 ? 'focused' : ''}
 						onClick={() => dispatch({ type: 'CLICK_ANSWER' })}
 					>等你来答</WaitAnswer>
 				</Link>

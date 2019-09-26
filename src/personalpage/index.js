@@ -1,4 +1,4 @@
-import React, { useCallback, useEffect } from 'react';
+import React, { useEffect } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import { Link } from 'react-router-dom';
 import {
@@ -18,7 +18,6 @@ import Header from '../common/header';
 
 function PersonalPage() {
 	const name = useSelector((state) => state.getIn(['personalPage', 'name']));
-	const personalHomePage = useSelector((state) => state.getIn(['PersonalPage', 'personalHomePage']));
 	const sex = useSelector((state) => state.getIn(['personalPage', 'sex']));
 	const sexButton = useSelector((state) => state.getIn(['personalPage', 'sexButton']));
 	const mouse = useSelector((state) => state.getIn(['personalPage', 'mouse']));
@@ -34,7 +33,6 @@ function PersonalPage() {
     const proExperienceButton = useSelector((state) => state.getIn(['personalPage', 'proExperienceButton']));
 	const eduExperience = useSelector((state) => state.getIn(['personalPage', 'eduExperience']));
 	const eduExperienceButton = useSelector((state) => state.getIn(['personalPage', 'eduExperienceButton']));
-	const focused = useSelector((state) => state.getIn(['header', 'focused']));
 	const dispatch = useDispatch();
 
 	useEffect(() => {

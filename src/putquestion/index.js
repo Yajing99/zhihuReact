@@ -1,4 +1,4 @@
-import React, { useCallback } from 'react';
+import React from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import {
 	PutQuestionWrapper,
@@ -14,7 +14,7 @@ function PutQuestion() {
 	let question = '';
 	const dispatch = useDispatch();
 
-	const postQuestion = useCallback(() => {
+	const postQuestion = () => {
 		if(question) {
 			axios.post('', qs.stringify({
 				question : question
@@ -25,7 +25,7 @@ function PutQuestion() {
 				console.log(err);
 			});
 		}
-	});
+	};
 
 	return (
 		<PutQuestionWrapper>

@@ -109,8 +109,8 @@ export const ArticleDisagree = styled.div`
 export const ArticleComment = styled.div`
 	display : flex;
 	align-items : center;
-	justify-content : space-between;
-	width : 5.6rem;
+	justify-content : center;
+	width : 7.6rem;
 	height : 100%;
 	color : #8590a6;
 	font-size : 0.9rem;

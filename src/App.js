@@ -8,8 +8,6 @@ import SignIn from './login/signin';
 import SignUp from './login/signup';
 import Home from './home';
 import PersonalPage from './personalpage';
-import Write from './write';
-import Read from './read';
 import Answer from './answer';
 import PutQuestion from './putquestion';
 

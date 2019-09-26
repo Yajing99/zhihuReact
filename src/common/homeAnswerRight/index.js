@@ -1,4 +1,4 @@
-import React, { useState, useCallback, useEffect } from 'react';
+import React, { useState, useCallback } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import {
 	RightWrapper,
@@ -27,7 +27,6 @@ function HomeAnswerRight() {
 	const collect = useSelector((state) => state.getIn(['homeAnswerRight', 'collect']));
 	const question = useSelector((state) => state.getIn(['homeAnswerRight', 'question']));
 	const invite = useSelector((state) => state.getIn(['homeAnswerRight', 'invite']));
-	const dispatch = useDispatch();
 	let eleDrag;
 
 	useInterval(() => {
@@ -119,15 +118,15 @@ function HomeAnswerRight() {
 				onMouseEnter={() => setStop(true)}
 				onMouseLeave={() => setStop(false)}
 			>
-				<img src={pictureone} className={selected == 0 ? 'active' : ''}></img>
-				<img src={picturetwo} className={selected == 1 ? 'active' : ''}></img>
-				<img src={picturethree} className={selected == 2 ? 'active' : ''}></img>
+				<img src={pictureone} className={selected === 0 ? 'active' : ''}></img>
+				<img src={picturetwo} className={selected === 1 ? 'active' : ''}></img>
+				<img src={picturethree} className={selected === 2 ? 'active' : ''}></img>
 				<span className='left' onClick={() => selected > 0 ? setSelected(selected - 1) : setSelected(2)}>&lt;</span>
 				<span className='right' onClick={() => selected < 2 ? setSelected(selected + 1) : setSelected(0)}>&gt;</span>
 				<DisplayTag>
-					<div className={selected == 0 ? 'active' : ''}></div>
-					<div className={selected == 1 ? 'active' : ''}></div>
-					<div className={selected == 2 ? 'active' : ''}></div>
+					<div className={selected === 0 ? 'active' : ''}></div>
+					<div className={selected === 1 ? 'active' : ''}></div>
+					<div className={selected === 2 ? 'active' : ''}></div>
 				</DisplayTag>
 			</TransitionInfo>
 			<WriteInfo>

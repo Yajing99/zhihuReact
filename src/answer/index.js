@@ -1,5 +1,4 @@
-import React, { useCallback } from 'react';
-import { useSelector, useDispatch } from 'react-redux';
+import React from 'react';
 import {
 	AnswerWrapper,
 	AnswerBody,
@@ -11,7 +10,6 @@ import Header from '../common/header';
 import HomeAnswerRight from '../common/homeAnswerRight';
 
 function Answer() {
-	const dispatch = useDispatch();
 
 	return (
   		<AnswerWrapper>
