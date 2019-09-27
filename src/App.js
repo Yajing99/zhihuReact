@@ -7,6 +7,7 @@ import store from './store';
 import SignIn from './login/signin';
 import SignUp from './login/signup';
 import Home from './home';
+import Write from './write';
 import PersonalPage from './personalpage';
 import Answer from './answer';
 import PutQuestion from './putquestion';
@@ -23,6 +24,7 @@ function App() {
         <Route exact path='/personalpage' component={ PersonalPage } />
         <Route exact path='/answer' component={ Answer } />
         <Route exact path='/putquestion' component={ PutQuestion } />
+        <Route exact path='/write' component={ Write } />
     </HashRouter>
     </Provider>
   );
